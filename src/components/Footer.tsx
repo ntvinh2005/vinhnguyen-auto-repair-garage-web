@@ -8,7 +8,7 @@ const Footer = () => {
           {/* Logo and Description */}
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
-              <img src="../../../public/logo.png" className="w-12 h-12" />
+              <img src="/logo.png" className="w-12 h-12" />
               <span className="text-white font-bold text-xl">
                 Vinh Nguyen Auto
               </span>
