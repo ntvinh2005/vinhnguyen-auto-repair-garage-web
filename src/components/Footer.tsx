@@ -1,4 +1,3 @@
-
 import { Wrench, Phone, Mail, MapPin } from "lucide-react";
 
 const Footer = () => {
@@ -9,14 +8,15 @@ const Footer = () => {
           {/* Logo and Description */}
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
-              <div className="w-10 h-10 bg-yellow-400 rounded-full flex items-center justify-center">
-                <Wrench className="w-6 h-6 text-red-800" />
-              </div>
-              <span className="text-white font-bold text-xl">Vinh Nguyen Auto</span>
+              <img src="../../../public/logo.png" className="w-12 h-12" />
+              <span className="text-white font-bold text-xl">
+                Vinh Nguyen Auto
+              </span>
             </div>
             <p className="text-red-200 mb-6 max-w-md">
-              Your trusted automotive service provider for over 15 years. Professional repairs, 
-              honest pricing, and guaranteed satisfaction for all makes and models.
+              Your trusted automotive service provider for over 15 years.
+              Professional repairs, honest pricing, and guaranteed satisfaction
+              for all makes and models.
             </p>
             <div className="space-y-2 text-sm text-red-200">
               <div className="flex items-center">
