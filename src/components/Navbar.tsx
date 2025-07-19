@@ -30,7 +30,7 @@ const Navbar = () => {
               className="w-12 h-12 drop-shadow-lg"
               alt="logo"
             />
-            <span className="text-white font-extrabold text-2xl tracking-wide drop-shadow">
+            <span className="hidden md:inline text-white font-extrabold text-2xl tracking-wide drop-shadow">
               Vinh Nguyên
             </span>
           </div>
