@@ -1,120 +1,111 @@
+import { Star, Quote } from "lucide-react";
+import { DefaultAvatar } from "./testimony-components";
 
-import { Star } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
+const reviews = [
+  {
+    stars: 5,
+    quote:
+      "Tôi là một trong những khách hàng đầu tiên của Vinh Nguyen Auto. Các bạn giải thích từng bước rất rõ ràng và tận tình cho tôi xem xe cần sửa gì. Cảm giác rất yên tâm, không bị làm giá hay ép buộc gì cả.",
+    name: "Ngọc Mai",
+    car: "Kia Morning 2020",
+    tag: "Chăm sóc tổng quát",
+  },
+  {
+    stars: 5,
+    quote:
+      "Nhân viên cực kỳ thân thiện, làm việc nhanh chóng! Tôi được nhận xe dù không đặt lịch trước. Bảng giá minh bạch, hợp lý – chắc chắn sẽ quay lại lần sau.",
+    name: "Hữu Phước",
+    car: "Mazda 3 2017",
+    tag: "Bảo dưỡng nhanh",
+  },
+  {
+    stars: 5,
+    quote:
+      "Mình là tài mới nên rất nhiều câu hỏi. Anh Quân và các bạn ở đây trả lời chu đáo, không làm mình thấy ngại. Dịch vụ tốt cho những ai lần đầu sở hữu ô tô.",
+    name: "Trần Linh",
+    car: "Honda City 2022",
+    tag: "Tư vấn & Kiểm tra",
+  },
+  {
+    stars: 5,
+    quote:
+      "Ban đầu hơi lo vì gara mới, nhưng Quân và nhân viên rất trung thực, nhiệt tình và cập nhật tiến độ liên tục cho tôi. Hoàn toàn hài lòng, sẽ giới thiệu bạn bè.",
+    name: "Hải Nam",
+    car: "Toyota Vios 2015",
+    tag: "Sửa chữa động cơ",
+  },
+  {
+    stars: 5,
+    quote:
+      "Gara sạch sẽ, hiện đại. Cảm nhận được sự tận tâm với từng khách. Giá tốt, dịch vụ chu đáo. Sẽ giới thiệu cho bạn bè và người thân.",
+    name: "Thảo Vy",
+    car: "Hyundai Accent 2019",
+    tag: "Thay dầu & bảo dưỡng",
+  },
+  {
+    stars: 5,
+    quote:
+      "Kiểm tra xe rất chi tiết, giải thích dễ hiểu. Giúp tôi sửa một lỗi nhỏ mà chỗ khác bỏ qua. Rất vui vì ủng hộ được một xưởng mới của địa phương.",
+    name: "Lê Minh",
+    car: "Ford Ranger 2016",
+    tag: "Chẩn đoán & sửa chữa",
+  },
+];
 
-const Testimonials = () => {
-  const testimonials = [
-    {
-      name: "Sarah Johnson",
-      vehicle: "2018 Honda Civic",
-      rating: 5,
-      text: "Vinh and his team saved me hundreds of dollars! They diagnosed my engine problem correctly on the first try, unlike the dealership who wanted to replace everything. Honest, skilled, and affordable.",
-      service: "Engine Diagnostics"
-    },
-    {
-      name: "Mike Rodriguez",
-      vehicle: "2015 Ford F-150",
-      rating: 5,
-      text: "I've been bringing all my vehicles here for 5 years. Vinh always explains what needs to be done and why. No pressure, no upselling - just honest service. Highly recommend!",
-      service: "Regular Maintenance"
-    },
-    {
-      name: "Linda Chen",
-      vehicle: "2020 Toyota Camry",
-      rating: 5,
-      text: "Fast, professional service with a smile. They got me back on the road the same day when my brakes failed. The peace of mind knowing my family is safe is priceless.",
-      service: "Brake Repair"
-    },
-    {
-      name: "David Thompson",
-      vehicle: "2017 Nissan Altima",
-      rating: 5,
-      text: "Best auto shop in town! Fair prices, quality work, and they stand behind their repairs. Vinh's team treats you like family, not just another customer.",
-      service: "Transmission Service"
-    },
-    {
-      name: "Maria Garcia",
-      vehicle: "2019 Subaru Outback",
-      rating: 5,
-      text: "I was nervous about finding a trustworthy mechanic after moving here. Vinh Nguyen Auto exceeded all my expectations. Professional, knowledgeable, and genuinely caring.",
-      service: "AC Repair"
-    },
-    {
-      name: "James Wilson",
-      vehicle: "2016 Chevrolet Silverado",
-      rating: 5,
-      text: "They fixed my truck's electrical issues that three other shops couldn't solve. Vinh's expertise and attention to detail is unmatched. Will never go anywhere else!",
-      service: "Electrical Repair"
-    }
-  ];
-
+export default function Testimonials() {
   return (
-    <section id="testimonials" className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-red-900 mb-6">
-            What Our Customers Say
-          </h2>
-          <p className="text-xl text-red-700 max-w-3xl mx-auto">
-            Don't just take our word for it - hear from the hundreds of satisfied customers who trust us with their vehicles
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, index) => (
-            <Card key={index} className="hover:shadow-xl transition-all duration-300 border-2 border-red-100 hover:border-yellow-400">
-              <CardContent className="p-6">
-                <div className="flex items-center mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 text-yellow-500 fill-current" />
-                  ))}
-                </div>
-                
-                <p className="text-red-700 mb-6 italic">"{testimonial.text}"</p>
-                
-                <div className="border-t border-red-100 pt-4">
-                  <div className="flex justify-between items-start">
-                    <div>
-                      <h4 className="font-bold text-red-900">{testimonial.name}</h4>
-                      <p className="text-sm text-red-600">{testimonial.vehicle}</p>
+    <section className="py-20 px-4 bg-white" id="testimonials">
+      <div className="max-w-7xl mx-auto">
+        <h2 className="text-4xl md:text-5xl font-bold text-red-900 text-center mb-4">
+          Khách hàng nói gì về chúng tôi
+        </h2>
+        <p className="text-lg text-red-700 text-center mb-12">
+          Đọc cảm nhận từ những khách hàng đầu tiên đã trải nghiệm dịch vụ tại
+          gara mới khai trương!
+        </p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {reviews.map((review, idx) => (
+            <div
+              key={idx}
+              className="bg-white rounded-2xl shadow-xl border border-yellow-100 p-8 flex flex-col justify-between hover:shadow-2xl transition relative overflow-visible"
+            >
+              {/* Large Quotation Icon */}
+              <Quote className="absolute -top-7 left-6 w-16 h-16 text-yellow-100 opacity-60 z-0" />
+              {/* Star rating */}
+              <div className="flex mb-4 z-10 relative">
+                {[...Array(review.stars)].map((_, i) => (
+                  <Star
+                    key={i}
+                    className="w-5 h-5 text-yellow-500 fill-yellow-400 mr-1"
+                  />
+                ))}
+              </div>
+              {/* Quote */}
+              <div className="text-red-900 italic mb-6 flex-1 z-10 relative leading-relaxed text-lg">
+                “{review.quote}”
+              </div>
+              {/* Footer info */}
+              <div className="flex items-center justify-between pt-4 border-t border-yellow-100 mt-auto z-10 relative">
+                <div className="flex items-center gap-3">
+                  {/* Reviewer Avatar, fallback to icon if needed */}
+                  <div className="w-10 h-10 rounded-full bg-yellow-100 flex items-center justify-center border-2 border-yellow-200 overflow-hidden shadow">
+                    <DefaultAvatar name={review.name} index={idx} />
+                  </div>
+                  <div>
+                    <div className="font-semibold text-red-900">
+                      {review.name}
                     </div>
-                    <div className="text-right">
-                      <div className="bg-red-800 text-white text-xs px-2 py-1 rounded">
-                        {testimonial.service}
-                      </div>
-                    </div>
+                    <div className="text-sm text-yellow-700">{review.car}</div>
                   </div>
                 </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-
-        <div className="text-center mt-16">
-          <div className="bg-gradient-to-r from-red-800 to-red-900 text-white p-8 rounded-lg max-w-4xl mx-auto">
-            <h3 className="text-2xl font-bold mb-4">Join Our Happy Customers</h3>
-            <p className="text-lg mb-6">
-              Experience the difference that honest, professional automotive service makes.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <div className="bg-white/20 px-6 py-3 rounded-lg">
-                <div className="text-2xl font-bold">4.9/5</div>
-                <div className="text-sm">Average Rating</div>
-              </div>
-              <div className="bg-white/20 px-6 py-3 rounded-lg">
-                <div className="text-2xl font-bold">2,500+</div>
-                <div className="text-sm">Happy Customers</div>
-              </div>
-              <div className="bg-white/20 px-6 py-3 rounded-lg">
-                <div className="text-2xl font-bold">15+</div>
-                <div className="text-sm">Years Experience</div>
+                <span className="bg-red-800 text-white px-3 py-1 rounded-full text-xs font-medium ml-4 shadow">
+                  {review.tag}
+                </span>
               </div>
             </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>
   );
-};
-
-export default Testimonials;
+}

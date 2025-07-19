@@ -1,107 +1,85 @@
+import { BadgeCheck, PiggyBank, HeartHandshake } from "lucide-react";
 
-import { Award, Users, Calendar } from "lucide-react";
+const commitments = [
+  {
+    icon: <BadgeCheck className="w-6 h-6 text-yellow-600" />,
+    title: "Chất lượng chuẩn hãng",
+    desc: "Thiết bị chẩn đoán hiện đại, linh kiện rõ nguồn gốc, kỹ thuật viên đào tạo bài bản – xe bạn được chăm sóc đúng cách, an toàn tuyệt đối.",
+  },
+  {
+    icon: <PiggyBank className="w-6 h-6 text-yellow-600" />,
+    title: "Giá cả minh bạch – hợp lý",
+    desc: "Mọi báo giá đều rõ ràng, tối ưu chi phí nhất có thể. Cam kết không phát sinh bất ngờ.",
+  },
+  {
+    icon: <HeartHandshake className="w-6 h-6 text-yellow-600" />,
+    title: "Dịch vụ tận tâm – tư vấn trung thực",
+    desc: "Chỉ đề xuất những gì xe bạn thực sự cần. Không “vẽ bệnh”, không ép buộc. Luôn đặt sự an tâm của khách hàng lên trên hết.",
+  },
+];
 
-const About = () => {
+export default function About() {
   return (
-    <section id="about" className="py-20 bg-gradient-to-br from-amber-50 to-orange-100">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          {/* Owner Story */}
-          <div>
-            <h2 className="text-4xl md:text-5xl font-bold text-red-900 mb-8">
-              Meet Vinh Nguyen
-            </h2>
-            <div className="space-y-6 text-lg text-red-700">
-              <p>
-                "I've been passionate about automobiles since I was a teenager. What started as a hobby 
-                working on my father's old pickup truck has grown into a thriving business serving our 
-                local community for over 15 years."
-              </p>
-              <p>
-                "At Vinh Nguyen Auto Repair, we treat every vehicle like it's our own. My team and I 
-                believe in honest diagnostics, fair pricing, and quality workmanship that stands the test of time."
-              </p>
-              <p>
-                "Whether you're dealing with a simple oil change or a complex engine rebuild, we're here 
-                to get you back on the road safely and affordably."
-              </p>
-            </div>
-            
-            <div className="mt-8 p-6 bg-white rounded-lg shadow-lg">
-              <h3 className="text-xl font-bold text-red-900 mb-4">Our Promise to You</h3>
-              <ul className="space-y-3 text-red-700">
-                <li className="flex items-center">
-                  <div className="w-2 h-2 bg-yellow-600 rounded-full mr-3"></div>
-                  Honest, upfront pricing with no hidden fees
-                </li>
-                <li className="flex items-center">
-                  <div className="w-2 h-2 bg-yellow-600 rounded-full mr-3"></div>
-                  Quality parts and guaranteed workmanship
-                </li>
-                <li className="flex items-center">
-                  <div className="w-2 h-2 bg-yellow-600 rounded-full mr-3"></div>
-                  Friendly, professional service every time
-                </li>
-                <li className="flex items-center">
-                  <div className="w-2 h-2 bg-yellow-600 rounded-full mr-3"></div>
-                  Fast turnaround without compromising quality
-                </li>
-              </ul>
-            </div>
+    <section className="bg-[#fff9f3] py-20 px-4" id="about">
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-12 items-center">
+        {/* Photo - left side */}
+        <div className="flex-shrink-0 flex justify-center items-center w-full md:w-[350px]">
+          <img
+            src="/assets/meet-leader/Quan.png"
+            alt="Anh Quân - Chủ Xưởng"
+            className="rounded-3xl shadow-xl border-4 border-white max-w-[330px] object-cover object-center"
+            style={{ height: "420px" }}
+          />
+        </div>
+
+        {/* Text Content - right side */}
+        <div className="flex-1">
+          <h2 className="text-4xl md:text-5xl font-bold text-red-900 mb-4">
+            Anh Quân
+          </h2>
+          <div className="text-yellow-800 font-medium text-lg mb-6">
+            Chủ xưởng Gara Vinh Nguyen
           </div>
 
-          {/* Stats and Credentials */}
-          <div className="space-y-8">
-            <div className="bg-white rounded-lg shadow-lg p-8">
-              <h3 className="text-2xl font-bold text-red-900 mb-6 text-center">Why Choose Us?</h3>
-              <div className="grid grid-cols-1 gap-6">
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-red-800 rounded-full flex items-center justify-center">
-                    <Calendar className="w-6 h-6 text-white" />
-                  </div>
-                  <div>
-                    <h4 className="text-xl font-bold text-red-900">15+ Years</h4>
-                    <p className="text-red-700">Of trusted automotive service</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-red-800 rounded-full flex items-center justify-center">
-                    <Users className="w-6 h-6 text-white" />
-                  </div>
-                  <div>
-                    <h4 className="text-xl font-bold text-red-900">2,500+</h4>
-                    <p className="text-red-700">Satisfied customers served</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-red-800 rounded-full flex items-center justify-center">
-                    <Award className="w-6 h-6 text-white" />
-                  </div>
-                  <div>
-                    <h4 className="text-xl font-bold text-red-900">ASE Certified</h4>
-                    <p className="text-red-700">Licensed automotive technicians</p>
-                  </div>
+          {/* Mission Statement */}
+          <blockquote className="text-xl md:text-2xl text-red-800 font-semibold italic mb-4">
+            SỨ MỆNH NGƯỜI LÃNH ĐẠO XƯỞNG GARA Ô TÔ – CHẤT LƯỢNG HÃNG, GIÁ BÌNH
+            DÂN
+          </blockquote>
+          <p className="text-red-700 mb-7">
+            Là người đứng đầu xưởng gara, tôi hiểu rằng mỗi chiếc xe khách hàng
+            mang đến không chỉ là phương tiện đi lại – đó là tài sản, là niềm
+            tin và sự an tâm trong từng hành trình. Sứ mệnh của tôi – và cũng là
+            tôn chỉ của cả xưởng – là mang đến dịch vụ sửa chữa, bảo dưỡng chất
+            lượng như chính hãng, nhưng với mức giá hợp lý, dễ tiếp cận cho mọi
+            khách hàng.
+          </p>
+
+          <div className="space-y-5 mb-8">
+            {commitments.map((item, idx) => (
+              <div key={idx} className="flex items-start gap-3">
+                <div className="mt-1">{item.icon}</div>
+                <div>
+                  <div className="font-semibold text-red-900">{item.title}</div>
+                  <div className="text-red-700 text-sm">{item.desc}</div>
                 </div>
               </div>
-            </div>
+            ))}
+          </div>
 
-            <div className="bg-red-800 text-white rounded-lg shadow-lg p-8">
-              <h3 className="text-2xl font-bold mb-4 text-center">Certifications & Memberships</h3>
-              <ul className="space-y-3">
-                <li>• ASE (Automotive Service Excellence) Certified</li>
-                <li>• Better Business Bureau Member</li>
-                <li>• State Licensed Auto Repair Facility</li>
-                <li>• Environmental Compliance Certified</li>
-                <li>• Continuous Training & Education</li>
-              </ul>
+          <div className="bg-yellow-100/80 p-4 rounded-xl shadow border-l-4 border-yellow-400 max-w-xl">
+            <div className="text-yellow-800 font-bold mb-1">
+              Vì sao chúng tôi chọn con đường “Chất lượng hãng – Giá bình dân”?
+            </div>
+            <div className="text-red-700 text-sm">
+              Bởi tôi tin rằng ai cũng xứng đáng được trải nghiệm dịch vụ an
+              toàn, chuyên nghiệp, không nhất thiết phải trả mức giá “trên trời”
+              tại các trung tâm chính hãng. Chúng tôi muốn khách hàng quay lại
+              không chỉ vì xe gặp trục trặc, mà vì niềm tin và sự hài lòng.
             </div>
           </div>
         </div>
       </div>
     </section>
   );
-};
-
-export default About;
+}
