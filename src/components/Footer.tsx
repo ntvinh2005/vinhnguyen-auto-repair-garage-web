@@ -38,7 +38,7 @@ const Footer = () => {
               </div>
               <a
                 className="flex items-center hover:underline"
-                href="https://www.facebook.com/profile.php?id=61577571418349"
+                href="https://www.facebook.com/share/19kUSyruH1/?mibextid=wwXIfr"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -47,7 +47,7 @@ const Footer = () => {
               </a>
               <div className="flex items-center">
                 <MapPin className="w-4 h-4 mr-2" />
-                Gara ô tô Vân Trì, 335 đường 23B Vân Trì, Đông Anh, Hà Nội
+                QL23B, Số 335 Phố Vân Trì, Xã Phúc Thịnh, Thành Phố Hà Nội
                 <a
                   href="https://g.co/kgs/EDsRjW9"
                   target="_blank"

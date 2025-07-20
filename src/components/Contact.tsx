@@ -28,7 +28,7 @@ export default function Contact() {
             </div>
             <a
               className="flex items-center gap-3 hover:underline"
-              href="https://www.facebook.com/profile.php?id=61577571418349"
+              href="https://www.facebook.com/share/19kUSyruH1/?mibextid=wwXIfr"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -43,9 +43,8 @@ export default function Contact() {
               <div>
                 <div className="font-semibold">Địa chỉ:</div>
                 <div>
-                  Gara ô tô Vân trì
-                  <br />
-                  335 đường 23B, Vân Trì, Đông Anh, Hà Nội
+                  Gara ô tô Vân Trì, QL23B, Số 335 Phố Vân Trì, Xã Phúc Thịnh,
+                  Thành Phố Hà Nội
                 </div>
               </div>
             </div>
@@ -68,7 +67,7 @@ export default function Contact() {
               Gọi ngay: 0911 980 131
             </a>
             <a
-              href="https://www.facebook.com/profile.php?id=61577571418349"
+              href="https://www.facebook.com/share/19kUSyruH1/?mibextid=wwXIfr"
               target="_blank"
               rel="noopener noreferrer"
               className="block w-full bg-blue-600 hover:bg-blue-500 text-white font-semibold py-3 rounded-lg shadow flex items-center justify-center gap-3 transition"
