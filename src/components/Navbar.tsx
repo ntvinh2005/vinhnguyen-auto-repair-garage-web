@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Wrench, Phone, Menu, X } from "lucide-react";
+import { useLocation, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 
 const NAV_LINKS = [
@@ -8,10 +9,32 @@ const NAV_LINKS = [
   { href: "#about", label: "Về chúng tôi" },
   { href: "#testimonials", label: "Khách hàng" },
   { href: "#contact", label: "Liên hệ" },
+  { href: "/blogs", label: "Bài viết" },
 ];
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleNavClick = (id: string) => {
+    if (id.includes("/")) {
+      return navigate(id);
+    }
+
+    const sectionId = id.replace("#", "");
+
+    if (location.pathname === "/") {
+      const target = document.getElementById(sectionId);
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      navigate("/", { state: { scrollTo: sectionId } });
+    }
+
+    setMenuOpen(false);
+  };
 
   return (
     <nav
@@ -24,7 +47,10 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo + Name */}
-          <div className="flex items-center space-x-3">
+          <div
+            className="flex items-center space-x-3 cursor-pointer"
+            onClick={() => navigate("/")}
+          >
             <img
               src="/logo.png"
               className="w-12 h-12 drop-shadow-lg"
@@ -36,11 +62,11 @@ const Navbar = () => {
           </div>
 
           {/* Desktop Nav */}
-          <div className="hidden md:flex space-x-7">
+          <div className="hidden mobileCutoff:flex space-x-7">
             {NAV_LINKS.map((link) => (
-              <a
+              <button
                 key={link.href}
-                href={link.href}
+                onClick={() => handleNavClick(link.href)}
                 className="relative group text-white font-medium text-lg px-2 py-1 transition-colors"
               >
                 {link.label}
@@ -48,7 +74,7 @@ const Navbar = () => {
                   className="block absolute left-0 -bottom-1 w-0 h-0.5 bg-yellow-400 group-hover:w-full transition-all duration-300"
                   style={{ transitionProperty: "width" }}
                 ></span>
-              </a>
+              </button>
             ))}
           </div>
 
@@ -64,7 +90,7 @@ const Navbar = () => {
 
           {/* Mobile Hamburger */}
           <button
-            className="md:hidden ml-3 p-2 rounded-full bg-white/10 hover:bg-yellow-400/10 transition focus:outline-none focus:ring-2 focus:ring-yellow-400"
+            className="mobileCutoff:hidden ml-3 p-2 rounded-full bg-white/10 hover:bg-yellow-400/10 transition focus:outline-none focus:ring-2 focus:ring-yellow-400"
             onClick={() => setMenuOpen((open) => !open)}
             aria-label="Toggle Menu"
           >
@@ -77,23 +103,22 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Nav - animated slide down */}
+      {/* Mobile Nav */}
       <div
-        className={`md:hidden bg-red-800/95 backdrop-blur-lg shadow-xl px-6 pb-5 pt-3 transition-all duration-400 ${
+        className={`mobileCutoff:hidden bg-red-800/95 backdrop-blur-lg shadow-xl px-6 pb-5 pt-3 transition-all duration-400 ${
           menuOpen
-            ? "max-h-[340px] opacity-100"
+            ? "max-h-[400px] opacity-100"
             : "max-h-0 opacity-0 pointer-events-none"
         } overflow-hidden`}
       >
         {NAV_LINKS.map((link) => (
-          <a
+          <button
             key={link.href}
-            href={link.href}
-            className="block text-white font-medium text-lg py-2 border-b border-red-900 last:border-b-0 hover:text-yellow-400 transition-colors"
-            onClick={() => setMenuOpen(false)}
+            onClick={() => handleNavClick(link.href)}
+            className="block w-full text-left text-white font-medium text-lg py-2 border-b border-red-900 last:border-b-0 hover:text-yellow-400 transition-colors"
           >
             {link.label}
-          </a>
+          </button>
         ))}
         <a
           href="tel:0911980131"

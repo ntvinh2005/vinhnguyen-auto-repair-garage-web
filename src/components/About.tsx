@@ -38,7 +38,7 @@ export default function About() {
             Anh Quân
           </h2>
           <div className="text-yellow-800 font-medium text-lg mb-6">
-            Chủ xưởng Gara Vinh Nguyen
+            Chủ xưởng Gara Vinh Nguyên
           </div>
 
           {/* Mission Statement */}
