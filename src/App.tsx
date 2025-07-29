@@ -9,6 +9,7 @@ import Login from "./pages/auth/Login";
 import PrivateRoute from "./pages/auth/PrivateRoute";
 import { BlogCreate, Blogs, BlogDetail } from "./pages/blogs";
 import BlogPublicLayout from "./pages/blogs/BlogPublicLayout";
+import { Analytics } from "@vercel/analytics/next";
 
 const queryClient = new QueryClient();
 
@@ -56,6 +57,7 @@ const App = () => (
           />
         </Routes>
       </BrowserRouter>
+      <Analytics />
     </TooltipProvider>
   </QueryClientProvider>
 );
