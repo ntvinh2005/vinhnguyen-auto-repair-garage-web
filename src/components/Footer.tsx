@@ -81,6 +81,8 @@ const Footer = () => {
               <li>Sơn & Thân vỏ</li>
               <li>Sửa chữa động cơ</li>
               <li>Tư vấn & kiểm tra tổng quát</li>
+              <li>Dịch vụ bảo hiểm thân vỏ</li>
+              <li>Bảo hiểm trách nhiệm dân sự</li>
               <li>Rửa xe & chăm sóc nội thất</li>
             </ul>
           </div>

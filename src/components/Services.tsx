@@ -218,9 +218,9 @@ export default function Services() {
               thể, kiểm tra định kỳ đến nâng cấp phụ kiện. Hãy liên hệ với chúng
               tôi để được tư vấn giải pháp tối ưu nhất cho xe của bạn!
             </p>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-4 text-sm">
               <div className="flex items-center gap-2">
-                <Sparkle className="w-4 h-4 text-yellow-400" /> Rửa xe
+                <Sparkle className="w-4 h-4 text-yellow-400" /> Dịch vụ bảo hiểm
               </div>
               <div className="flex items-center gap-2">
                 <Sparkle className="w-4 h-4 text-yellow-400" /> Chăm sóc nội
@@ -232,6 +232,9 @@ export default function Services() {
               <div className="flex items-center gap-2">
                 <Sparkle className="w-4 h-4 text-yellow-400" /> Dán film cách
                 nhiệt
+              </div>
+              <div className="flex items-center gap-2">
+                <Sparkle className="w-4 h-4 text-yellow-400" /> Rửa xe
               </div>
             </div>
           </div>
